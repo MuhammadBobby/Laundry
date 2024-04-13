@@ -1,5 +1,5 @@
  <!-- Start Navbar -->
- <nav class="bg-white bg-opacity-75 backdrop-blur-sm fixed w-full z-50 top-0 start-0 shadow-md">
+ <nav class="bg-white bg-opacity-75 backdrop-blur-sm fixed w-full z-40 top-0 start-0 shadow-md">
      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
          <a href="index.php" class="flex items-center space-x-3 rtl:space-x-reverse">
              <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" loading="lazy" />
@@ -11,7 +11,7 @@
              <?php
                 if (isset($_SESSION['user']) && isset($_SESSION['login'])) {
                 ?>
-                 <a href="function/logout.php" class="text-white hidden md:block bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 text-center pt-3">LOGOUT</a>
+                 <a href="function/logout.php" class="text-white hidden md:block bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 text-center pt-3" onclick="return confirm('Apakah anda yakin ingin keluar?');">LOGOUT</a>
              <?php } else { ?>
 
                  <a href="auth/login.php" class="text-white hidden md:block bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-4 py-2 text-center pt-3">SIGN IN</a>
@@ -23,7 +23,22 @@
              <a href="keranjang.php">
                  <div class="flex justify-center items-center border-2 border-slate-500 rounded-full max-h-10 max-w-10 p-5 px-6">
                      <i class="fa-solid fa-cart-shopping"></i>
-                     <span class="px-2 font-bold">0</span>
+
+                     <?php
+
+
+                        if (isset($_SESSION['user']) && isset($_SESSION['login'])) {
+
+                            $jumlahQuery = "SELECT COUNT(*) AS jumlah_layanan FROM transaksi WHERE user = '$_SESSION[user]' && status = 'pending'";
+
+                            $jumlahKeranjang = $conn->query($jumlahQuery);
+                            while ($jmlh = $jumlahKeranjang->fetch_assoc()) :
+                        ?>
+                             <span class="px-2 font-bold"><?= $jmlh['jumlah_layanan']; ?></span>
+                         <?php endwhile;
+                        } else { ?>
+                         <span class="px-2 font-bold">0</span>
+                     <?php } ?>
                  </div>
              </a>
 

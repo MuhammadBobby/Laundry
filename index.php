@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'function/connect.php';
 ?>
 
 
@@ -29,8 +30,7 @@ session_start();
 
 <body class="font-[Poppins]">
 
-  <?php include('navbar.php');
-  ?>
+  <?php include('navbar.php'); ?>
 
   <?php
   include('home.php');

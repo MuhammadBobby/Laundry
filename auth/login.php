@@ -76,6 +76,14 @@ if (isset($_POST['login'])) {
                 icon: "success"
             });
         </script>
+    <?php elseif (isset($_GET['gagal'])) : ?>
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Gagal Tambah Pesanan',
+                text: 'Anda Harus Sign In terlebih dahulu'
+            })
+        </script>
     <?php endif; ?>
 
 
