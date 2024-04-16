@@ -18,7 +18,7 @@ $status = 'Pending';
 
 $query = "INSERT INTO transaksi VALUES ('', '$user', '$layanan', $harga, $berat, '$tanggal', '$catatan',$total, '$status')";
 if ($conn->query($query) === TRUE) {
-    header("location: ../index.php?berhasil=true");
+    header("location: ../index.php?berhasil=true#layanan");
     exit;
 } else {
     echo "Error: " . $query . "<br>" . $conn->error;

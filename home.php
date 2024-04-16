@@ -47,9 +47,9 @@ if (isset($_GET['berhasil'])) {
         <!-- layanan 1 -->
         <div class="w-full max-w-sm bg-slate-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between p-3">
             <div>
-                <a href="?path=cuci-kering">
+                <button data-modal-target="layanan-cuci-basah" data-modal-toggle="layanan-cuci-basah">
                     <img class="rounded-t-lg" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
-                </a>
+                </button>
 
                 <div class="px-5 py-5">
                     <a href="">
@@ -82,9 +82,9 @@ if (isset($_GET['berhasil'])) {
         <!-- layanan 2 -->
         <div class="w-full max-w-sm bg-slate-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between p-3">
             <div>
-                <a href="#">
+                <button data-modal-target="layanan-cuci-kering" data-modal-toggle="layanan-cuci-kering">
                     <img class="rounded-t-lg" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
-                </a>
+                </button>
 
                 <div class="px-5 py-5">
                     <a href="#">
@@ -106,8 +106,8 @@ if (isset($_GET['berhasil'])) {
 
             <div>
                 <div class="flex items-center justify-between">
-                    <span class="text-xl font-bold text-gray-900 dark:text-white">Rp. <span class="text-sky-500">10.000</span> / Kg</span>
-                    <a href="#" class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Add to cart</a>
+                    <span class="text-xl font-bold text-gray-900 dark:text-white">Rp. <span class="text-sky-500">15.000</span> / Kg</span>
+                    <button data-modal-target="layanan-cuci-kering" data-modal-toggle="layanan-cuci-kering" class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Add to cart</button>
                 </div>
             </div>
         </div>
@@ -115,9 +115,9 @@ if (isset($_GET['berhasil'])) {
         <!-- layanan 3-->
         <div class="w-full max-w-sm bg-slate-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between p-3">
             <div>
-                <a href="#">
+                <button data-modal-target="layanan-kombo" data-modal-toggle="layanan-kombo">
                     <img class="rounded-t-lg" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
-                </a>
+                </button>
                 <div class="px-5 py-5">
                     <a href="#">
                         <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white md:text-3xl">Layanan Cuci Kering + Setrika</h5>
@@ -138,8 +138,8 @@ if (isset($_GET['berhasil'])) {
 
             <div>
                 <div class="flex items-center justify-between">
-                    <span class="text-xl font-bold text-gray-900 dark:text-white">Rp. <span class="text-sky-500">10.000</span> / Kg</span>
-                    <a href="#" class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Add to cart</a>
+                    <span class="text-xl font-bold text-gray-900 dark:text-white">Rp. <span class="text-sky-500">20.000</span> / Kg</span>
+                    <button data-modal-target="layanan-kombo" data-modal-toggle="layanan-kombo" class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Add to cart</butt>
                 </div>
             </div>
         </div>
@@ -393,7 +393,7 @@ if (isset($_GET['berhasil'])) {
 
 
 <!-- layanan modal -->
-<!-- modal 1 -->
+<!-- modal layanan-cuci-basah -->
 <!-- Main modal -->
 <div id="layanan-cuci-basah" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-md max-h-full">
@@ -425,11 +425,117 @@ if (isset($_GET['berhasil'])) {
                     <div class="col-span-2 sm:col-span-1">
                         <label for="berat" class="block text-sm font-medium text-gray-900 dark:text-white">Berat barang</label>
                         <p class="text-sm font-light text-red-500  mb-2">*max 20kg</p>
-                        <input type="number" name="berat" id="berat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:text-white dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="1" min="1" max="20">
+                        <input type="number" name="berat" id="berat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:text-white dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500" value="1" min="1" max="20" required>
                     </div>
                     <div class="col-span-2 sm:col-span-1">
                         <label for="tanggal" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">tanggal & waktu pengambilan</label>
-                        <input type="datetime-local" name="tanggal" id="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                        <input type="datetime-local" name="tanggal" id="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                    </div>
+                    <div class="col-span-2">
+                        <label for="catatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Catatan</label>
+                        <textarea id="catatan" name="catatan" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tuliskan catatan untuk kami..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
+                    </svg>
+                    Add to cart
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- modal layanan-cuci-kering -->
+<!-- Main modal -->
+<div id="layanan-cuci-kering" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                    Masukkan data pemesanan
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="layanan-cuci-kering">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <form class="p-4 md:p-5" action="function/proses.php" method="POST">
+                <div class="grid gap-4 mb-4 grid-cols-2">
+                    <div class="col-span-2">
+                        <label for="layanan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">nama layanan</label>
+                        <input type="text" name="layanan" id="layanan" class="bg-gray-50 border border-gray-300 text-sky-600 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500" value="Layanan Cuci Kering" readonly>
+                    </div>
+                    <div class="col-span-2">
+                        <label for="harga" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Harga perkilo</label>
+                        <input type="text" name="harga" id="harga" class="bg-gray-50 border border-gray-300 text-sky-600 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500" value="15000" readonly>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="berat" class="block text-sm font-medium text-gray-900 dark:text-white">Berat barang</label>
+                        <p class="text-sm font-light text-red-500  mb-2">*max 20kg</p>
+                        <input type="number" name="berat" id="berat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:text-white dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500" value="1" min="1" max="20" required>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="tanggal" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">tanggal & waktu pengambilan</label>
+                        <input type="datetime-local" name="tanggal" id="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
+                    </div>
+                    <div class="col-span-2">
+                        <label for="catatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Catatan</label>
+                        <textarea id="catatan" name="catatan" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tuliskan catatan untuk kami..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path>
+                    </svg>
+                    Add to cart
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- modal layanan-kombo -->
+<!-- Main modal -->
+<div id="layanan-kombo" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                    Masukkan data pemesanan
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="layanan-kombo">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <form class="p-4 md:p-5" action="function/proses.php" method="POST">
+                <div class="grid gap-4 mb-4 grid-cols-2">
+                    <div class="col-span-2">
+                        <label for="layanan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">nama layanan</label>
+                        <input type="text" name="layanan" id="layanan" class="bg-gray-50 border border-gray-300 text-sky-600 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500" value="Layanan Cuci Kering + Setrika" readonly>
+                    </div>
+                    <div class="col-span-2">
+                        <label for="harga" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Harga perkilo</label>
+                        <input type="text" name="harga" id="harga" class="bg-gray-50 border border-gray-300 text-sky-600 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500" value="20000" readonly>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="berat" class="block text-sm font-medium text-gray-900 dark:text-white">Berat barang</label>
+                        <p class="text-sm font-light text-red-500  mb-2">*max 20kg</p>
+                        <input type="number" name="berat" id="berat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:text-white dark:border-gray-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary-500" value="1" min="1" max="20" required>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label for="tanggal" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">tanggal & waktu pengambilan</label>
+                        <input type="datetime-local" name="tanggal" id="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" required>
                     </div>
                     <div class="col-span-2">
                         <label for="catatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Catatan</label>

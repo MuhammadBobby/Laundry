@@ -98,7 +98,7 @@ if (isset($_POST['login'])) {
                     <form class="space-y-4 md:space-y-6" action="" method="POST">
                         <div>
                             <label for="username" class="block mb-2 text-sm font-semibold text-gray-900 ">Username</label>
-                            <input type="username" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-sky-600 focus:border-sky-600 block w-full p-2.5 " placeholder="name@company.com" required="">
+                            <input type="username" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-sky-600 focus:border-sky-600 block w-full p-2.5 " placeholder="name@company.com" required="" autofocus="">
                         </div>
                         <div>
                             <label for="password" class="block mb-2 text-sm font-semibold text-gray-900 ">Password</label>
