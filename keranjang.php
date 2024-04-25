@@ -1,4 +1,5 @@
 <?php
+include 'config.php';
 // Set lokal ke Indonesia
 setlocale(LC_TIME, 'id_ID.utf8');
 session_start();

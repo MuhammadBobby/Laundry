@@ -69,7 +69,7 @@ payButton.addEventListener("click", async function (e) {
                   });
                 })
                 .catch((error) => {
-                  console.error("Error mengirim pesan WhatsApp:", error);
+                  console.error("Error mengirim pesan WhatsApp:", error.message);
                   Swal.fire("Error", "Tidak dapat mengirim pesan WhatsApp.", "error");
                 });
             } else {

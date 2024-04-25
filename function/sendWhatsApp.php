@@ -23,9 +23,9 @@ $orderId = $data['orderId'];
 
 $message = $twilio->messages
     ->create(
-        TWILIO_TO, // to
+        "whatsapp:+6282277448525", // to
         array(
-            "from" => TWILIO_FROM,
+            "from" => "whatsapp:+14155238886",
             "body" => 'Customer : ' . $user . '
 Address : ' . $alamat . '
 Contact : ' . $kontak . '

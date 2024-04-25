@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 require 'connect.php';
-require '../config.php';
 
 /*Install Midtrans PHP Library (https://github.com/Midtrans/midtrans-php)
 composer require midtrans/midtrans-php
@@ -17,7 +16,7 @@ require_once dirname(__FILE__) . '/payment.php';
 //SAMPLE REQUEST START HERE
 
 // Set your Merchant Server Key
-\Midtrans\Config::$serverKey = MIDTRANS_API_KEY;
+\Midtrans\Config::$serverKey = "SB-Mid-server-kKpI7zbYhvt83lR-CC3LpNiR";
 // Set to Development/Sandbox Environment (default). Set to true for Production Environment (accept real transaction).
 \Midtrans\Config::$isProduction = false;
 // Set sanitization on (default)
