@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ok Laundry</title>
-
+    <title>Invoice</title>
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,459 +12,47 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- mycss -->
     <link rel="stylesheet" href="asset/style.css" />
-    <!-- flowbite-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
-    <!-- font awesome : icons -->
-    <script src="https://kit.fontawesome.com/22f19496c5.js" crossorigin="anonymous"></script>
-</head>
+  </head>
+  <body style="font-family: poppins, sans-serif">
+    <div class="max-w-xl bg-white shadow-xl m-10 md:m-auto md:my-20 p-5">
+      <h1 class="text-3xl font-semibold text-teal-800 text-center">INVOICE</h1>
 
-<body class="font-[Poppins]">
-<!-- Start Navbar -->
-<nav class="bg-white bg-opacity-75 backdrop-blur-sm fixed w-full z-50 top-0 start-0 shadow-md">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" loading="lazy" />
-      <span class="self-center text-2xl font-semibold whitespace-nowrap">OK Laundry</span>
-    </a>
-    <div class="flex gap-2 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-      <a href="" class="text-white hidden md:block bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-4 py-2 text-center pt-3">SIGN IN</a>
-
-      <a href="" class="hidden md:block text-slate-700 bg-white border-2 border-slate-500 hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-sky-300 font-bold rounded-lg text-sm px-4 py-2 text-center pt-3"> SIGN UP </a>
-
-      <div class="flex justify-center items-center border-2 border-slate-500 rounded-full max-h-10 max-w-10 p-5 px-6">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span class="px-2 font-bold">0</span>
+      <div class="mt-10">
+        <p>Invoice Number: <span class="text-sky-600">INV-00</span></p>
+        <p>Date: <span class="text-sky-600">00/00/0000</span></p>
+        <p>Client: <span class="text-sky-600">Client Name</span></p>
       </div>
 
-      <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-sticky" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
-        </svg>
-      </button>
-    </div>
-    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-      <ul class="flex flex-col p-4 mt-4 font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0" id="nav">
-        <li>
-          <a href="#" class="nav-item block py-2 px-3 text-lg font-bold text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-700 md:p-0" aria-current="page">Home</a>
-        </li>
-        <li>
-          <a href="#how" class="nav-item block py-2 px-3 text-lg font-bold text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-700 md:p-0">How</a>
-        </li>
-        <li>
-          <a href="#benefit" class="nav-item block py-2 px-3 text-lg font-bold text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-700 md:p-0">Benefit</a>
-        </li>
-        <li>
-          <a href="#reviews" class="nav-item block py-2 px-3 text-lg font-bold text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-700 md:p-0">Reviews</a>
-        </li>
-        <li>
-          <a href="#layanan" class="nav-item block py-2 px-3 text-lg font-bold text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-700 md:p-0">Services</a>
-        </li>
-        <li>
-          <a href="#" class="block bg-sky-700 text-white md:hidden py-2 px-3 text-lg font-bold rounded hover:bg-gray-200 md:hover:bg-transparent  md:hover:text-sky-700 md:p-0 ">Sign In</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- End Navbar -->
+      <div class="relative mt-10">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <tr>
+              <th scope="col" class="px-6 py-3">Layanan</th>
+              <th scope="col" class="px-6 py-3">Berat</th>
+              <th scope="col" class="px-6 py-3">Catatan</th>
+              <th scope="col" class="px-6 py-3">Harga</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white border-b">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Apple MacBook Pro 17"</th>
+              <td class="px-6 py-4">Silver</td>
+              <td class="px-6 py-4">Laptop</td>
+              <td class="px-6 py-4">$2999</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr class="bg-white border-b">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Total</th>
+              <td class="px-6 py-4"></td>
+              <td class="px-6 py-4"></td>
+              <td class="px-6 py-4">$2999</td>
+            </tr>
+          </tfoot>
+        </table>
 
-<!-- start jumbotron -->
-<section class="bg-center bg-no-repeat bg-[url('asset/img/bg-laundry.webp')] bg-gray-700 bg-blend-multiply bg-cover min-h-screen">
-  <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl"><span class="text-cyan-500">OK Laundry</span>, Shuttle Every Day</h1>
-    <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
-      <span class="underline">OK Laundry</span> adalah sebuah platform yang menyediakan jasa laundry. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, natus!
-    </p>
-    <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-      <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:ring-sky-300 dark:focus:ring-sky-900">
-        Laundry Now
-        <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-        </svg>
-      </a>
-      <a href="#how" class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
-        See More
-      </a>
-    </div>
-  </div>
-</section>
-<!-- end jumbotron -->
-
-<!-- start about -->
-<section id="how" class="py-20 px-8 flex gap-5 justify-center items-center">
-  <div class="hidden w-1/3 md:block">
-    <img src="asset/img/keranjang.png" alt="basket" loading="lazy" class="w-full" />
-  </div>
-  <div class="w-full md:w-1/3">
-    <h1 class="text-center text-xl font-extrabold tracking-wide text-slate-900 md:text-2xl py-8">Bagaimana Cara Kerjanya?</h1>
-    <div class="flex justify-center items-center py-5 md:py-3">
-      <div class="w-1/3">
-        <i class="fa-solid fa-cart-plus text-sky-500 text-6xl"></i>
-      </div>
-      <div class="w-1/2">
-        <h3 class="text-lg font-semibold md:text-xl">Pesan Laundry Anda</h3>
-        <p class="text-sm font-light text-justify text-slate-700">Pesan laundry dengan mudah melalui platform kami. Dijamin <span class="text-cyan-300 font-bold">100%</span> aman.</p>
+        <p class="text-xs font-light">*Invoice dibuat secara otomatis</p>
       </div>
     </div>
-    <div class="flex justify-center items-center py-5 md:py-3">
-      <div class="w-1/3">
-        <i class="fa-solid fa-cart-plus text-sky-500 text-6xl"></i>
-      </div>
-      <div class="w-1/2">
-        <h3 class="text-lg font-semibold md:text-xl">Pesan Laundry Anda</h3>
-        <p class="text-sm font-light text-justify text-slate-700">Pesan laundry dengan mudah melalui platform kami. Dijamin <span class="text-cyan-300 font-bold">100%</span> aman.</p>
-      </div>
-    </div>
-    <div class="flex justify-center items-center py-5 md:py-3">
-      <div class="w-1/3">
-        <i class="fa-solid fa-cart-plus text-sky-500 text-6xl"></i>
-      </div>
-      <div class="w-1/2">
-        <h3 class="text-lg font-semibold md:text-xl">Pesan Laundry Anda</h3>
-        <p class="text-sm font-light text-justify text-slate-700">Pesan laundry dengan mudah melalui platform kami. Dijamin <span class="text-cyan-300 font-bold">100%</span> aman.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end about -->
-
-<!-- start benefit -->
-<section id="benefit" class="py-20 max-w-7xl mx-auto px-8 text-center">
-  <h1 class="text-xl font-extrabold md:text-4xl">Benefit Laundry di <span class="text-sky-500">OK Laundry</span></h1>
-  <p class="text-sm font-light text-slate-700 md:font-normal">Kamu ingin tau apa aja yang bakal kamu dapatkan dari laundry kami?</p>
-  <div class="flex flex-wrap items-center justify-center py-10 md:gap-3">
-    <!-- first -->
-    <div class="w-2/3 bg-slate-100 border-2 border-slate-300 rounded-md shadow-md md:w-1/4 my-3">
-      <img src="asset/img/bersih.jpg" alt="1" class="object-cover" loading="lazy" />
-      <div class="p-3 md:px-10">
-        <h3 class="text-lg font-bold py-3 leading-5 md:text-xl">Pengalaman Layanan <span class="text-sky-800">Terbaik</span></h3>
-        <p class="text-sm font-extralight text-slate-700">Pengalaman terbaik akan kami berikan kepada anda dan pakaian anda. Lorem ipsum dolor sit amet consectetur.</p>
-      </div>
-    </div>
-
-    <!-- second -->
-    <div class="w-2/3 bg-slate-100 border-2 border-slate-300 rounded-md shadow-md md:w-1/4 my-3">
-      <img src="asset/img/bersih.jpg" alt="1" class="object-cover" loading="lazy" />
-      <div class="p-3 md:px-10">
-        <h3 class="text-lg font-bold py-3 leading-5 md:text-xl">Pengalaman Layanan <span class="text-sky-800">Terbaik</span></h3>
-        <p class="text-sm font-extralight text-slate-700">Pengalaman terbaik akan kami berikan kepada anda dan pakaian anda. Lorem ipsum dolor sit amet consectetur.</p>
-      </div>
-    </div>
-
-    <!-- third -->
-    <div class="w-2/3 bg-slate-100 border-2 border-slate-300 rounded-md shadow-md md:w-1/4 my-3">
-      <img src="asset/img/bersih.jpg" alt="1" class="object-cover" />
-      <div class="p-3 md:px-10">
-        <h3 class="text-lg font-bold py-3 leading-5 md:text-xl">Pengalaman Layanan <span class="text-sky-800">Terbaik</span></h3>
-        <p class="text-sm font-extralight text-slate-700">Pengalaman terbaik akan kami berikan kepada anda dan pakaian anda. Lorem ipsum dolor sit amet consectetur.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- end benefit -->
-
-<!-- start reviews -->
-<section id="reviews" class="py-36 px-8 md:py-48 bg-sky-900 relative">
-  <!-- wave -->
-  <div class="custom-shape-divider-top-1709721751">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-    </svg>
-  </div>
-  <div class="text-center mb-8">
-    <p class="text-sm font-light text-white md:font-normal">Ingin lihat berbagai testimoni dan review customer kami yang merasa puas?</p>
-    <h1 class="text-xl text-sky-200 font-extrabold md:text-5xl">Reviews Customer</h1>
-  </div>
-
-  <div id="default-carousel" class="relative w-full" data-carousel="slide">
-    <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-      <!-- Item 1 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <div class="flex justify-center items-center h-full">
-          <div class="w-4/5 mx-auto p-5 bg-sky-200 border-2 border-slate-400 shadow-md rounded-md md:w-1/2">
-            <div class="flex justify-between items-center md:justify-start">
-              <img src="asset/img/keranjang-kotor.jpg" alt="reviewer" class="w-10 rounded-full md:w-20" loading="lazy" />
-              <div class="text-xs text-yellow-500 ms-5 text-right md:text-sm md:text-left">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
-                <p class="mt-1">(4.5) <span class="text-slate-600">01/01/2024</span></p>
-              </div>
-            </div>
-
-            <p class="text-xs font-medium mt-3 text-justify md:text-base">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis debitis neque quaerat possimus non vero iste voluptatibus fugit</p>
-          </div>
-        </div>
-      </div>
-      <!-- Item 2 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <div class="flex justify-center items-center h-full">
-          <div class="w-4/5 mx-auto p-5 bg-sky-200 border-2 border-slate-400 shadow-md rounded-md md:w-1/2">
-            <div class="flex justify-between items-center md:justify-start">
-              <img src="asset/img/keranjang-kotor.jpg" alt="reviewer" class="w-10 rounded-full md:w-20" loading="lazy" />
-              <div class="text-xs text-yellow-500 ms-5 text-right md:text-sm md:text-left">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <p class="mt-1">(5.0) <span class="text-slate-600">01/01/2024</span></p>
-              </div>
-            </div>
-
-            <p class="text-xs font-medium mt-3 text-justify md:text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores optio nesciunt delectus cupiditate iusto reprehenderit facere autem ipsum doloribus pariatur adipisci aspernatur, odio placeat quam maiores veritatis id ea
-              illum?
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- Item 3 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <div class="flex justify-center items-center h-full">
-          <div class="w-4/5 mx-auto p-5 bg-sky-200 border-2 border-slate-400 shadow-md rounded-md md:w-1/2">
-            <div class="flex justify-between items-center md:justify-start">
-              <img src="asset/img/keranjang-kotor.jpg" alt="reviewer" class="w-10 rounded-full md:w-20" loading="lazy" />
-              <div class="text-xs text-yellow-500 ms-5 text-right md:text-sm md:text-left">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
-                <p class="mt-1">(4.5) <span class="text-slate-600">01/01/2024</span></p>
-              </div>
-            </div>
-
-            <p class="text-xs font-medium mt-3 text-justify md:text-base">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis debitis neque quaerat possimus non vero iste voluptatibus fugit</p>
-          </div>
-        </div>
-      </div>
-      <!-- Item 4 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-      </div>
-      <!-- Item 5 -->
-      <div class="hidden duration-700 ease-in-out" data-carousel-item>
-        <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-      </div>
-    </div>
-    <!-- Slider indicators -->
-    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-      <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-    </div>
-    <!-- Slider controls -->
-    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
-        </svg>
-        <span class="sr-only">Previous</span>
-      </span>
-    </button>
-    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-        <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-        </svg>
-        <span class="sr-only">Next</span>
-      </span>
-    </button>
-  </div>
-
-  <!-- wave -->
-  <div class="custom-shape-divider-bottom-1709721933">
-    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
-      <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
-      <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
-    </svg>
-  </div>
-</section>
-<!-- end reviews -->
-
-<!-- start layanan -->
-<section id="layanan" class="py-20 max-w-7xl mx-auto px-8 text-center">
-  <div class="text-center mb-8 max-w-xl m-auto">
-    <h1 class="text-xl text-sky-800 font-extrabold md:text-5xl">Layanan Kami</h1>
-    <p class="text-sm font-light text-slate-600 md:font-normal"><span class="text-sky-500 font-semibold">OK Laudry</span> punya 3 layanan yang dapat anda pilih. Sesuaikan layanan dengan kebutuhan anda ya😁</p>
-  </div>
-
-  <div class="flex flex-wrap gap-3 justify-center">
-    <!-- layanan 1 -->
-    <div class="w-full max-w-sm bg-slate-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between p-3">
-      <div>
-        <a href="#">
-          <img class="rounded-t-lg" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
-        </a>
-
-        <div class="px-5 py-5">
-          <a href="#">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white md:text-3xl">Layanan Cuci Kering</h5>
-            <p class="text-xs font-light text-white">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio earum ut in fugiat necessitatibus officia, voluptatibus quod rem laboriosam sunt ea sit non, possimus quaerat mollitia odit? Iure, voluptate nesciunt?
-            </p>
-          </a>
-          <div class="flex items-center mt-2.5 mb-5">
-            <div class="flex items-center space-x-1 rtl:space-x-reverse text-yellow-500">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-sky-200 dark:text-sky-800 ms-3">5.0</span>
-          </div>
-        </div>
-
-        <div>
-          <div class="flex items-center justify-between">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">Rp. <span class="text-sky-500">10.000</span> / Kg</span>
-            <a href="#" class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Add to cart</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- layanan 2 -->
-    <div class="w-full max-w-sm bg-slate-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between p-3">
-      <div>
-        <a href="#">
-          <img class="rounded-t-lg" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
-        </a>
-
-        <div class="px-5 py-5">
-          <a href="#">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white md:text-3xl">Layanan Cuci Kering</h5>
-            <p class="text-xs font-light text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. At dolore, aut debitis eius dolores neque, similique sunt id eum distinctio repellat?</p>
-          </a>
-          <div class="flex items-center mt-2.5 mb-5">
-            <div class="flex items-center space-x-1 rtl:space-x-reverse text-yellow-500">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-sky-200 dark:text-sky-800 ms-3">5.0</span>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="flex items-center justify-between">
-          <span class="text-xl font-bold text-gray-900 dark:text-white">Rp. <span class="text-sky-500">10.000</span> / Kg</span>
-          <a href="#" class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Add to cart</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- layanan 3-->
-    <div class="w-full max-w-sm bg-slate-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between p-3">
-      <div>
-        <a href="#">
-          <img class="rounded-t-lg" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
-        </a>
-        <div class="px-5 py-5">
-          <a href="#">
-            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white md:text-3xl">Layanan Cuci Kering</h5>
-            <p class="text-xs font-light text-white">Lorem, ipsum dolor</p>
-          </a>
-          <div class="flex items-center mt-2.5 mb-5">
-            <div class="flex items-center space-x-1 rtl:space-x-reverse text-yellow-500">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-sky-200 dark:text-sky-800 ms-3">5.0</span>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="flex items-center justify-between">
-          <span class="text-xl font-bold text-gray-900 dark:text-white">Rp. <span class="text-sky-500">10.000</span> / Kg</span>
-          <a href="#" class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Add to cart</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</section>
-<!-- end layanan -->
-
-<!-- start footer -->
-<footer class="bg-sky-950 ">
-  <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-    <div class="md:flex md:justify-between">
-      <div class="mb-6 md:mb-0">
-        <a href="https://flowbite.com/" class="flex items-center">
-          <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" loading="lazy" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap text-sky-200">OK Laundry</span>
-        </a>
-      </div>
-      <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-        <div>
-          <h2 class="mb-6 text-sm font-semibold  uppercase text-white">Resources</h2>
-          <ul class="text-gray-500 :text-gray-400 font-medium">
-            <li class="mb-4">
-              <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
-            </li>
-            <li>
-              <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="mb-6 text-sm font-semibold  uppercase text-white">Follow us</h2>
-          <ul class="text-gray-500 :text-gray-400 font-medium">
-            <li class="mb-4">
-              <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
-            </li>
-            <li>
-              <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="mb-6 text-sm font-semibold  uppercase text-white">Legal</h2>
-          <ul class="text-gray-500 :text-gray-400 font-medium">
-            <li class="mb-4">
-              <a href="#" class="hover:underline">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <hr class="my-6 border-gray-200 sm:mx-auto :border-gray-700 lg:my-8" />
-    <div class="sm:flex sm:items-center sm:justify-between">
-      <span class="text-sm text-gray-500 sm:text-center :text-gray-400">© 2024 <a href="https://flowbite.com/" class="hover:underline">OK Laundry™</a>. All Rights Reserved.
-      </span>
-
-    </div>
-  </div>
-
-</footer>
-<!-- end footer -->
-
-<!-- script flowbite -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
-
-<!-- my script -->
-<script src="asset/navbar.js"></script>
-</body>
+  </body>
 </html>

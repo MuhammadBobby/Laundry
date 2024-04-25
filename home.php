@@ -45,7 +45,7 @@ if (isset($_GET['berhasil'])) {
 
     <div class="flex flex-wrap gap-3 justify-center">
         <!-- layanan 1 -->
-        <div class="w-full max-w-sm bg-slate-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between p-3">
+        <div class="w-full md:w-1/4 bg-slate-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between p-3">
             <div>
                 <button data-modal-target="layanan-cuci-basah" data-modal-toggle="layanan-cuci-basah">
                     <img class="rounded-t-lg" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
@@ -80,7 +80,7 @@ if (isset($_GET['berhasil'])) {
         </div>
 
         <!-- layanan 2 -->
-        <div class="w-full max-w-sm bg-slate-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between p-3">
+        <div class="w-full md:w-1/4 bg-slate-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between p-3">
             <div>
                 <button data-modal-target="layanan-cuci-kering" data-modal-toggle="layanan-cuci-kering">
                     <img class="rounded-t-lg" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
@@ -113,7 +113,7 @@ if (isset($_GET['berhasil'])) {
         </div>
 
         <!-- layanan 3-->
-        <div class="w-full max-w-sm bg-slate-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between p-3">
+        <div class="w-full md:w-1/4 bg-slate-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col justify-between p-3">
             <div>
                 <button data-modal-target="layanan-kombo" data-modal-toggle="layanan-kombo">
                     <img class="rounded-t-lg" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
@@ -153,7 +153,7 @@ if (isset($_GET['berhasil'])) {
     <div class="hidden w-1/3 md:block">
         <img src="asset/img/keranjang.png" alt="basket" loading="lazy" class="w-full" />
     </div>
-    <div class="w-full md:w-1/3">
+    <div class="w-full md:w-1/4">
         <h1 class="text-center text-xl font-extrabold tracking-wide text-slate-900 md:text-2xl py-8">Bagaimana Cara Kerjanya?</h1>
         <div class="flex justify-center items-center py-5 md:py-3">
             <div class="w-1/3">

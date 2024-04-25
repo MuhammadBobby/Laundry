@@ -33,17 +33,17 @@ $params = array(
     'customer_details' => array(
         'first_name' => $_POST['nama'],
         'email' => $_POST['user'] . '@gmail.com',
-        'address' => $_POST['alamat'],
         'phone' => $_POST['kontak'],
+        'address' => $_POST['alamat'],
     ),
 );
 
 
 // mengubah transaksi yang bersangkutan menjadi selesai
-$items = json_decode($_POST['layanan'], true);
-foreach ($items as $item) {
-    $update = $conn->query("UPDATE transaksi SET status = 'selesai' WHERE user = '$_POST[user]'");
-}
+// $items = json_decode($_POST['layanan'], true);
+// foreach ($items as $item) {
+//     $update = $conn->query("UPDATE transaksi SET status = 'selesai' WHERE user = '$_POST[user]'");
+// }
 
 
 $snapToken = \Midtrans\Snap::getSnapToken($params);

@@ -37,6 +37,9 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
 
     <!-- midtrans payment -->
     <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-swwccgD0Jfc-pvk-"></script>
+
+    <!-- ajax jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body class="font-[Poppins]">
@@ -226,6 +229,15 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+                    <div class="bg-white p-5">
+                        <h1 class="text-xl font-semibold text-gray-900">Cetak Invoice</h1>
+                        <form action="function/invoice.php" method="POST">
+                            <label for="tanggal" class="inline-block mb-2 text-sm font-medium text-gray-900 mt-3">Pilih Tanggal</label>
+                            <input type="date" name="tanggal" id="tanggal" class="block bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5">
+                            <input type="hidden" name="user" id="user" value="<?= $_SESSION["user"] ?>">
+                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-3">Cetak</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -239,70 +251,7 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
     <script src="asset/navbar.js"></script>
 
     <!-- script payment -->
-    <script>
-        // For example trigger on button clicked, or any time you need
-        const payButton = document.getElementById("pay-button");
-        const form = document.getElementById("payment-form");
-
-        payButton.addEventListener("click", async function(e) {
-            e.preventDefault(); // Perbaikan tanda kurung
-            const formData = new FormData(form); // Huruf besar pada FormData
-            const data = new URLSearchParams(formData);
-
-            try {
-                const response = await fetch("function/payment.php", {
-                    method: "POST",
-                    body: data,
-                });
-                const snapToken = await response.text(); // Mengasumsikan server hanya mengembalikan token sebagai teks sederhana
-
-                // Gunakan token untuk membuka Snap popup
-                window.snap.pay(snapToken, {
-                    onSuccess: function(result) {
-                        Swal.fire({
-                            title: "Pembayaran Berhasil!",
-                            text: "Pesanan anda akan di proses segera!",
-                            icon: "success"
-                        }).then((result) => {
-                            if (result.value) {
-                                location.reload(); // Refresh halaman
-                            }
-                        });
-                    },
-                    onPending: function(result) {
-                        Swal.fire({
-                            icon: "info",
-                            title: "Pembayaran Pending",
-                            text: "Silahkan lakukan pembayaran",
-                        }).then((result) => {
-                            if (result.value) {
-                                location.reload(); // Refresh halaman
-                            }
-                        });
-                    },
-                    onError: function(result) {
-                        Swal.fire({
-                            icon: "error",
-                            title: "Pembayaran Gagal",
-                            text: "pembayaran Expired, silahkan lakukan pemesanan dan pembayaran kembali",
-                        }).then((result) => {
-                            if (result.value) {
-                                location.reload(); // Refresh halaman
-                            }
-                        });
-                    },
-                    onClose: function() {
-                        Swal.fire({
-                            icon: "warning",
-                            title: "you closed the popup without finishing the payment",
-                        });
-                    }
-                });
-            } catch (error) {
-                console.log(error.message);
-            }
-        });
-    </script>
+    <script src="asset/payment.js"></script>
 </body>
 
 </html>
