@@ -6,7 +6,7 @@ if (isset($_SESSION['user'])) {
     $user = $_SESSION['user'];
 
 
-    $query = "UPDATE transaksi SET status = 'selesai' WHERE user = ? AND status = 'pending'";
+    $query = "UPDATE transaksi SET status = 'selesai' WHERE user = ? AND status = 'pending'"; //blm maksimal karena blm memiliki fitur checkout sebagian untuk proses
     $stmt = $conn->prepare($query);
     $stmt->bind_param("s", $user);
     $stmt->execute();
