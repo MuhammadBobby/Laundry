@@ -5,11 +5,12 @@
 
 // Update the path below to your autoload.php,
 // see https://getcomposer.org/doc/01-basic-usage.md
+include '../config.php';
 require_once '../vendor/autoload.php';
 
 use Twilio\Rest\Client;
 
-$sid    = "AC67b096c5cd0ac9fb60408a3cfccb0d75";
+$sid    = TWILIO_API_KEY;
 $token  = "2bcd40e980b9e8b63425f1795a700a45";
 $twilio = new Client($sid, $token);
 // menangkap data
