@@ -11,7 +11,7 @@ require_once '../vendor/autoload.php';
 use Twilio\Rest\Client;
 
 $sid    = TWILIO_API_KEY;
-$token  = "2bcd40e980b9e8b63425f1795a700a45";
+$token  = TWILIO_TOKEN;
 $twilio = new Client($sid, $token);
 // menangkap data
 $data = json_decode(file_get_contents('php://input'), true);
