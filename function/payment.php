@@ -41,13 +41,6 @@ $params = array(
 );
 
 
-// mengubah transaksi yang bersangkutan menjadi selesai
-// $items = json_decode($_POST['layanan'], true);
-// foreach ($items as $item) {
-//     $update = $conn->query("UPDATE transaksi SET status = 'selesai' WHERE user = '$_POST[user]'");
-// }
-
-
 $snapToken = \Midtrans\Snap::getSnapToken($params);
 $response = [
     'snapToken' => $snapToken,

@@ -85,11 +85,7 @@ payButton.addEventListener("click", async function (e) {
         Swal.fire({
           icon: "info",
           title: "Pembayaran Pending",
-          text: "Silahkan lakukan pembayaran",
-        }).then((result) => {
-          if (result.value) {
-            location.reload(); // Refresh halaman
-          }
+          text: "Silahkan lakukan pembayaran. Jika terjadi kesalahan mulai ulang website",
         });
       },
       onError: function (result) {
@@ -97,16 +93,13 @@ payButton.addEventListener("click", async function (e) {
           icon: "error",
           title: "Pembayaran Gagal",
           text: "pembayaran Expired, silahkan lakukan pemesanan dan pembayaran kembali",
-        }).then((result) => {
-          if (result.value) {
-            location.reload(); // Refresh halaman
-          }
         });
       },
       onClose: function () {
         Swal.fire({
           icon: "warning",
-          title: "you closed the popup without finishing the payment",
+          title: "Kamu keluar sebelum melanjutkan pemabayaran",
+          text: "Silahkan lakukan pemesanan dan pembayaran kembali. Jika terjadi kesalahan mulai ulang website",
         });
       },
     });

@@ -68,17 +68,18 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
                 <?php
 
                 foreach ($result as $row) : ?>
+                    <img src="asset/img/keranjang.png" class="rounded-sm block lg:hidden w-20 lg:h-24 mx-10 shadow-xl" alt="">
                     <div class="flex justify-between p-5 px-10 items-center">
                         <div id="main" class="flex items-center gap-3">
-                            <img src="asset/img/keranjang.png" class="rounded-sm h-20 w-auto lg:h-24" alt="">
+                            <img src="asset/img/keranjang.png" class="rounded-sm hidden lg:block lg:w-auto lg:h-24" alt="">
                             <div>
-                                <h3 class="text-lg font-semibold lg:text-xl lg:font-bold"><?= $row["name"] ?></h3>
-                                <p class="text-sm font-light lg:text-base">Rp <?= number_format($row['price'], 0, ',', '.'); ?> x <?= $row["quantity"] ?> kg</p>
+                                <h3 class="text-md font-semibold lg:text-xl lg:font-bold"><?= $row["name"] ?></h3>
+                                <p class="text-xs font-light lg:text-base">Rp <?= number_format($row['price'], 0, ',', '.'); ?> x <?= $row["quantity"] ?> kg</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-5">
-                            <p class="text-xl font-medium">Rp <?= number_format($row['total'], 0, ',', '.'); ?></p>
-                            <a href="function/remove-item.php?id=<?= $row['idTransaksi'] ?>" class="text-red-500 text-xl" onclick="return confirm('Apakah kamu yakin ingin menghapus item ini?')">
+                            <p class="text-md font-medium lg:text-xl">Rp <?= number_format($row['total'], 0, ',', '.'); ?></p>
+                            <a href="function/remove-item.php?id=<?= $row['idTransaksi'] ?>" class="text-red-500 text-sm lg:text-xl" onclick="return confirm('Apakah kamu yakin ingin menghapus item ini?')">
                                 <i class="fa-solid fa-trash"></i>
                             </a>
                         </div>
@@ -132,8 +133,9 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
                         </div>
 
                         <button type="button" id="pay-button" class="w-fit text-white bg-sky-600 hover:bg-sky-700 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Checkout</button>
+                        <p class="text-xs font-light text-red-600 -mt-3">*Jangan keluar dari pop up sebelum menyelesaikan pembayaran!</p>
 
-                        <a href="index.php#layanan" class="block text-sm font-medium text-sky-600 hover:underline">&lt;&lt; Lanjutkan Pemesanan layanan</a>
+                        <a href="index.php#layanan" class="block text-lg font-medium text-sky-600 hover:underline">&lt;&lt; Lanjutkan Pemesanan layanan</a>
                     </form>
 
                 <?php else : ?>

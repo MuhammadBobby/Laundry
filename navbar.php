@@ -66,9 +66,20 @@
                  <li>
                      <a href="index.php#benefit" class="nav-item block py-2 px-3 text-lg font-bold text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-sky-700 md:p-0">Benefit</a>
                  </li>
-                 <li>
-                     <a href="auth/login.php" class="block bg-sky-700 text-white md:hidden py-2 px-3 text-lg font-bold rounded hover:bg-gray-200 md:hover:bg-transparent  md:hover:text-sky-700 md:p-0 ">Sign In</a>
-                 </li>
+                 <?php
+                    if (isset($_SESSION['user']) && isset($_SESSION['login'])) {
+                    ?>
+                     <li>
+                         <a href="function/logout.php" class="block bg-red-700 text-white md:hidden py-2 px-3 text-lg font-bold rounded hover:bg-gray-200 md:hover:bg-transparent  md:hover:text-red-700 md:p-0 ">Logout</a>
+                     </li>
+                 <?php } else { ?>
+                     <li>
+                         <a href="auth/login.php" class="block bg-sky-700 text-white md:hidden py-2 px-3 text-lg font-bold rounded hover:bg-gray-200 md:hover:bg-transparent  md:hover:text-sky-700 md:p-0 ">Sign In</a>
+                     </li>
+                     <li>
+                         <a href="auth/register.php" class="block  text-gray-900 md:hidden py-2 px-3 text-lg font-bold rounded hover:bg-gray-200 md:hover:bg-transparent  md:hover:text-sky-700 md:p-0 ">Sign Up</a>
+                     </li>
+                 <?php } ?>
              </ul>
          </div>
      </div>

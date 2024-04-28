@@ -8,6 +8,15 @@ if (isset($_GET['berhasil'])) {
         }
     )
     </script>";
+} else if (isset($_GET['review'])) {
+    echo "<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Review Berhasil Direkam',
+        text: 'Terimakasih telah menilai laundry kami'
+        }
+    )
+    </script>";
 }
 
 ?>
@@ -205,49 +214,42 @@ if (isset($_GET['berhasil'])) {
     <div id="default-carousel" class="relative w-full" data-carousel="slide">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-            <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <div class="flex justify-center items-center h-full">
-                    <div class="w-4/5 mx-auto p-5 bg-sky-200 border-2 border-slate-400 shadow-md rounded-md md:w-1/2">
-                        <div class="flex justify-between items-center md:justify-start">
-                            <img src="asset/img/keranjang-kotor.jpg" alt="reviewer" class="w-10 rounded-full md:w-20" loading="lazy" />
-                            <div class="text-xs text-yellow-500 ms-5 text-right md:text-sm md:text-left">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star-half-stroke"></i>
-                                <p class="mt-1">(4.5) <span class="text-slate-600">01/01/2024</span></p>
-                            </div>
-                        </div>
 
-                        <p class="text-xs font-medium mt-3 text-justify md:text-base">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis debitis neque quaerat possimus non vero iste voluptatibus fugit</p>
+            <?php
+            $review = mysqli_query($conn, "SELECT r.*
+            FROM review r
+            JOIN (
+                SELECT reviewer, MAX(bintang) AS highest_rating
+                FROM review
+                WHERE bintang BETWEEN 4 AND 5
+                GROUP BY reviewer
+            ) as max_rev ON r.reviewer = max_rev.reviewer AND r.bintang = max_rev.highest_rating
+            ORDER BY r.reviewer, r.bintang DESC
+            LIMIT 5;            
+            ");
+            while ($data = mysqli_fetch_array($review)) {
+            ?>
+
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <div class="flex justify-center items-center h-full">
+                        <div class="w-4/5 mx-auto p-5 bg-sky-200 border-2 border-slate-400 shadow-md rounded-md md:w-1/2">
+                            <div class="flex justify-between items-center md:justify-start">
+                                <h1 class="text-lg font-bold text-slate-600"><?= $data['reviewer'] ?></h1>
+                                <div class="text-xs text-yellow-500 ms-5 text-right md:text-sm md:text-left">
+                                    <?php for ($i = 0; $i < $data['bintang']; $i++) { ?>
+                                        <i class="fa-solid fa-star"></i>
+                                    <?php } ?>
+                                    <p class="mt-1">(<?= $data['bintang'] ?>) <span class="text-slate-600"><?= $data['tanggal'] ?></span></p>
+                                </div>
+                            </div>
+
+                            <p class="text-xs font-medium mt-3 text-justify md:text-base text-summary"><?= $data['review'] ?></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Item 2 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <div class="flex justify-center items-center h-full">
-                    <div class="w-4/5 mx-auto p-5 bg-sky-200 border-2 border-slate-400 shadow-md rounded-md md:w-1/2">
-                        <div class="flex justify-between items-center md:justify-start">
-                            <img src="asset/img/keranjang-kotor.jpg" alt="reviewer" class="w-10 rounded-full md:w-20" loading="lazy" />
-                            <div class="text-xs text-yellow-500 ms-5 text-right md:text-sm md:text-left">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <p class="mt-1">(5.0) <span class="text-slate-600">01/01/2024</span></p>
-                            </div>
-                        </div>
+            <?php } ?>
 
-                        <p class="text-xs font-medium mt-3 text-justify md:text-base">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores optio nesciunt delectus cupiditate iusto reprehenderit facere autem ipsum doloribus pariatur adipisci aspernatur, odio placeat quam maiores veritatis id ea
-                            illum?
-                        </p>
-                    </div>
-                </div>
-            </div>
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <div class="flex justify-center items-center h-full">
@@ -353,11 +355,18 @@ if (isset($_GET['berhasil'])) {
 <!-- feed back -->
 <section class="py-20 max-w-5xl px-8 mx-auto">
     <div class="text-center">
-        <h1 class="font-bold text-3xl text-gray-800 md:text-5xl ">Masukan</h1>
-        <p class="font-light text-slate-600 text-xs md:text-sm">Berikan masukan anda untuk kami agar kami dapat berkembang menjadi lebih baik.</p>
+        <h1 class="font-bold text-3xl text-gray-800 md:text-5xl ">Masukan & Review</h1>
+        <p class="font-light text-slate-600 text-xs md:text-sm">Berikan masukan dan Review anda untuk kami agar kami dapat berkembang menjadi lebih baik.</p>
     </div>
 
-    <form action="">
+    <?php
+    $username = $_SESSION['user'];
+    $query = "SELECT * FROM user WHERE username = '$username'";
+    $result = mysqli_query($conn, $query);
+    $user = mysqli_fetch_assoc($result);
+    ?>
+
+    <form action="function/review.php" method="POST">
 
         <div class="flex my-5">
             <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md ">
@@ -365,20 +374,17 @@ if (isset($_GET['berhasil'])) {
                     <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z" />
                 </svg>
             </span>
-            <input type="text" id="website-admin" class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 " placeholder="Bonnie Green">
+            <input type="text" id="reviewer" name="reviewer" class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 " value="<?= $user ? $user['nama'] : 'Jhon Doe' ?>" readonly>
         </div>
 
         <div class="flex my-5">
             <span class="inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-e-0 border-gray-300 rounded-s-md ">
-                <svg class="w-4 h-4 text-gray-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
-                    <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
-                    <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
-                </svg>
+                <i class="fa-solid fa-star text-gray-500"></i>
             </span>
-            <input type="text" id="website-admin" class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 " placeholder="example@gmail.com">
+            <input type="number" min="0" max="5" id="bintang" name="bintang" class="rounded-none rounded-e-lg bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm p-2.5 " placeholder="Rating" reaquired>
         </div>
 
-        <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Masukan/Saran..."></textarea>
+        <textarea id="review" name="review" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Masukan/Saran/Review..." required></textarea>
 
         <button type="submit" class="text-white my-5 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Submit</button>
     </form>

@@ -43,6 +43,7 @@ require 'function/connect.php';
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   <!-- my script -->
   <script src="asset/navbar.js"></script>
+  <script src="asset/script.js"></script>
 </body>
 
 </html>
