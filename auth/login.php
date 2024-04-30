@@ -14,12 +14,22 @@ if (isset($_POST['login'])) {
     $password = $_POST['password'];
 
     $cekUser = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+    $cekAdmin = mysqli_query($conn, "SELECT * FROM pegawai WHERE username = '$username'");
     if (mysqli_num_rows($cekUser) > 0) {
         $user = mysqli_fetch_assoc($cekUser);
         if ($password === $user['password']) {
             $_SESSION['login'] = true;
             $_SESSION['user'] = $username;
             header('Location: ../keranjang.php');
+            exit;
+        }
+    } else if (mysqli_num_rows($cekAdmin) > 0) {
+        $admin = mysqli_fetch_assoc($cekAdmin);
+        if ($password === $admin['password']) {
+            $_SESSION['login_adm'] = true;
+            $_SESSION['user_adm'] = $username;
+            $_SESSION['posisi'] = $admin['posisi'];
+            header('Location: ../dashboard');
             exit;
         }
     }
