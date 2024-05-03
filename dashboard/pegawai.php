@@ -1,3 +1,29 @@
+<?php if (isset($_GET['insert'])) : ?>
+    <script>
+        Swal.fire({
+            title: "Good job!",
+            text: "Data Pegawai Berhasil Di Tambah!",
+            icon: "success",
+        });
+    </script>
+<?php elseif (isset($_GET['update'])) : ?>
+    <script>
+        Swal.fire({
+            title: "Good job!",
+            text: "Data Pegawai Berhasil Di Update!",
+            icon: "success",
+        });
+    </script>
+<?php elseif (isset($_GET['delete'])) : ?>
+    <script>
+        Swal.fire({
+            title: "Good job!",
+            text: "Data Pegawai Berhasil Di Hapus!",
+            icon: "success",
+        });
+    </script>
+<?php endif; ?>
+
 <div class="page-heading">
     <div class="page-title">
         <div class="row">
@@ -41,7 +67,7 @@
                             <?php
                             $no = 1;
 
-                            $sql = "SELECT * FROM pegawai JOIN level ON pegawai.posisi = level.levelID";
+                            $sql = "SELECT * FROM pegawai JOIN level ON pegawai.posisi = level.levelID ORDER BY pegawai.posisi ASC";
                             $query = mysqli_query($conn, $sql);
                             while ($data = mysqli_fetch_array($query)) :
                             ?>
@@ -53,8 +79,8 @@
                                     <td><?= $data['no_telp'] ?></td>
                                     <td><?= $data['posisi'] ?></td>
                                     <td>
-                                        <a href=""><i class="fa-solid fa-pen text-warning p-2"></i></a>
-                                        <a href=""><i class="fa-solid fa-trash text-danger p-2"></i></a>
+                                        <a href="?page=function/pegawai/editPegawai&username=<?= $data['username'] ?>"><i class="fa-solid fa-pen text-warning p-2"></i></a>
+                                        <a href="function/pegawai/deletePegawai.php?username=<?= $data['username'] ?>"><i class="fa-solid fa-trash text-danger p-2" onclick="return confirm('Are you sure you want to delete this data?')"></i></a>
                                     </td>
                                 </tr>
 
