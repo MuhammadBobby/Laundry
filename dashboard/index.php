@@ -28,6 +28,7 @@ if (!isset($_SESSION['login_adm']) && !isset($_SESSION['user_adm'])) {
   <!-- tailwind -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
   <script src="https://kit.fontawesome.com/22f19496c5.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>

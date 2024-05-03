@@ -56,6 +56,12 @@
                             <span>Pegawai</span>
                         </a>
                     </li>
+                    <li class="sidebar-item ">
+                        <a href="?page=Posisi" class="sidebar-link">
+                            <i class="bi bi-pen-fill"></i>
+                            <span>Posisi</span>
+                        </a>
+                    </li>
                 <?php endif; ?>
 
 
@@ -66,9 +72,14 @@
                         <span>Layanan</span>
                     </a>
                 </li>
-
-
                 <?php if ($_SESSION['posisi'] == 1) : ?>
+                    <li class="sidebar-item ">
+                        <a href="?page=review" class="sidebar-link">
+                            <i class="bi bi-stack"></i>
+                            <span>Review</span>
+                        </a>
+                    </li>
+
                     <li class="sidebar-title">Master Data</li>
                     <li class="sidebar-item ">
                         <a href="?page=transaksi" class="sidebar-link">
