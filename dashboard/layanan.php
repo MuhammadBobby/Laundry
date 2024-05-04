@@ -2,7 +2,7 @@
     <script>
         Swal.fire({
             title: "Good job!",
-            text: "Data Pegawai Berhasil Di Tambah!",
+            text: "Data Layanan Berhasil Di Tambah!",
             icon: "success",
         });
     </script>
@@ -10,7 +10,7 @@
     <script>
         Swal.fire({
             title: "Good job!",
-            text: "Data Pegawai Berhasil Di Update!",
+            text: "Data Layanan Berhasil Di Update!",
             icon: "success",
         });
     </script>
@@ -18,8 +18,16 @@
     <script>
         Swal.fire({
             title: "Good job!",
-            text: "Data Pegawai Berhasil Di Hapus!",
+            text: "Data Layanan Berhasil Di Hapus!",
             icon: "success",
+        });
+    </script>
+<?php elseif (isset($_GET['notFound'])) : ?>
+    <script>
+        Swal.fire({
+            title: "Not Found!",
+            text: "Data Layanan Tidak Ditemukan!",
+            icon: "error",
         });
     </script>
 <?php endif; ?>
@@ -48,7 +56,7 @@
             <?php if ($_SESSION['posisi'] == 1 || $_SESSION['posisi'] == 2) : ?>
                 <div class="card-header">
                     <a href="?page=function/layanan/addLayanan" class="btn btn-primary">Tambah Data Layanan</a>
-                    <a href="?page=print_layanan" class="btn btn-success">Print</a>
+                    <a href="function/layanan/exportLayanan.php" class="btn btn-success">Print</a>
                 </div>
             <?php endif; ?>
             <div class="card-body">

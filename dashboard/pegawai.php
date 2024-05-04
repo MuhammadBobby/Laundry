@@ -22,6 +22,14 @@
             icon: "success",
         });
     </script>
+<?php elseif (isset($_GET['notFound'])) : ?>
+    <script>
+        Swal.fire({
+            title: "Not Found!",
+            text: "Data Pegawai Tidak Ditemukan!",
+            icon: "error",
+        });
+    </script>
 <?php endif; ?>
 
 <div class="page-heading">
@@ -47,7 +55,7 @@
         <div class="card">
             <div class="card-header">
                 <a href="?page=function/pegawai/addPegawai" class="btn btn-primary">Tambah Data Pegawai</a>
-                <a href="?page=print_pegawai" class="btn btn-success">Print</a>
+                <a href="function/pegawai/exportPegawai.php" class="btn btn-success">Print</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

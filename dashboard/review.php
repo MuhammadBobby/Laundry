@@ -1,3 +1,14 @@
+<?php if (isset($_GET['notFound'])) : ?>
+    <script>
+        Swal.fire({
+            title: "Not Found!",
+            text: "Data Review Tidak Ditemukan!",
+            icon: "error",
+        });
+    </script>
+<?php endif; ?>
+
+
 <div class="page-heading">
     <div class="page-title">
         <div class="row">
@@ -21,7 +32,7 @@
         <div class="card">
             <?php if ($_SESSION['posisi'] == 1 || $_SESSION['posisi'] == 2) : ?>
                 <div class="card-header">
-                    <a href="?page=print_review" class="btn btn-success">Print</a>
+                    <a href="function/layanan/exportReview.php" class="btn btn-success">Print</a>
                 </div>
             <?php endif; ?>
             <div class="card-body">

@@ -61,11 +61,9 @@ if (isset($_GET['berhasil'])) {
                 </button>
 
                 <div class="px-5 py-5">
-                    <a href="">
+                    <a href="#">
                         <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white md:text-3xl">Layanan Cuci Basah</h5>
-                        <p class="text-xs font-light text-white">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio earum ut in fugiat necessitatibus officia, voluptatibus quod rem laboriosam sunt ea sit non, possimus quaerat mollitia odit? Iure, voluptate nesciunt?
-                        </p>
+                        <p class="text-xs font-light text-white">Layanan Cuci Basah adalah layanan yang paling basic dari OK Laundry. Layanan ini memberikan anda pengalaman mencuci tanpa harus khawatir kehabisan waktu dengan harga yang sangat terjangkau.</p>
                     </a>
                     <div class="flex items-center mt-2.5 mb-5">
                         <div class="flex items-center space-x-1 rtl:space-x-reverse text-yellow-500">
@@ -78,12 +76,12 @@ if (isset($_GET['berhasil'])) {
                         <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-sky-200 dark:text-sky-800 ms-3">5.0</span>
                     </div>
                 </div>
+            </div>
 
-                <div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-xl font-bold text-gray-900 dark:text-white">Rp. <span class="text-sky-500">10.000</span> / Kg</span>
-                        <button data-modal-target="layanan-cuci-basah" data-modal-toggle="layanan-cuci-basah" class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Add to cart</button>
-                    </div>
+            <div>
+                <div class="flex items-center justify-between">
+                    <span class="text-xl font-bold text-gray-900 dark:text-white">Rp. <span class="text-sky-500">10.000</span> / Kg</span>
+                    <button data-modal-target="layanan-cuci-basah" data-modal-toggle="layanan-cuci-basah" class="text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Add to cart</button>
                 </div>
             </div>
         </div>
@@ -98,7 +96,7 @@ if (isset($_GET['berhasil'])) {
                 <div class="px-5 py-5">
                     <a href="#">
                         <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white md:text-3xl">Layanan Cuci Kering</h5>
-                        <p class="text-xs font-light text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. At dolore, aut debitis eius dolores neque, similique sunt id eum distinctio repellat?</p>
+                        <p class="text-xs font-light text-white">Layanan Cuci Kering menjadi BestSeller dalam OK Laundry. Menjadi pilihan terbaik bagi kalian yang ingin menjadikan pakaian kalian bersih tanpa harus memikirkan lagi untuk menjemur pakaian kalian. Dengan harga yang masih terjangkau, kalian bisa mendapatkan pakaian tanpa harus kebingungan mengeringkannya.</p>
                     </a>
                     <div class="flex items-center mt-2.5 mb-5">
                         <div class="flex items-center space-x-1 rtl:space-x-reverse text-yellow-500">
@@ -130,7 +128,7 @@ if (isset($_GET['berhasil'])) {
                 <div class="px-5 py-5">
                     <a href="#">
                         <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white md:text-3xl">Layanan Cuci Kering + Setrika</h5>
-                        <p class="text-xs font-light text-white">Lorem, ipsum dolor</p>
+                        <p class="text-xs font-light text-white">Layanan ini adalah layanan paling premium dari OK Laundry. Dengan layanan ini, pakaian bagus kalian akan terawat, bersih, wangi, hingga rapi dan mulus hingga kalian hanya perlu langsung memakainya. Layanan ini sangat direkomendasikan bagi kalian yang tidak ada waktu sama sekali untuk memikirkan pakaian kalian. serahkan pada kami dengan layanan premium kami, dan kamu hanya perlu memakainya.</p>
                     </a>
                     <div class="flex items-center mt-2.5 mb-5">
                         <div class="flex items-center space-x-1 rtl:space-x-reverse text-yellow-500">

@@ -14,6 +14,14 @@
             icon: "success",
         });
     </script>
+<?php elseif (isset($_GET['notFound'])) : ?>
+    <script>
+        Swal.fire({
+            title: "Not Found!",
+            text: "Data User Tidak Ditemukan!",
+            icon: "error",
+        });
+    </script>
 <?php endif ?>
 
 <div class="page-heading">
@@ -40,7 +48,7 @@
             <?php if ($_SESSION['posisi'] == 1 || $_SESSION['posisi'] == 2) : ?>
                 <div class="card-header">
                     <!-- <a href="?page=function/user/add_user" class="btn btn-primary">Tambah Data User</a> -->
-                    <a href="?page=print_user" class="btn btn-success">Print</a>
+                    <a href="function/user/exportUser.php" class="btn btn-success">Print</a>
                 </div>
             <?php endif; ?>
             <div class="card-body">

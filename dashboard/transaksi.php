@@ -1,3 +1,13 @@
+<?php if (isset($_GET['notFound'])) : ?>
+    <script>
+        Swal.fire({
+            title: "Not Found!",
+            text: "Data Transaksi Tidak Ditemukan!",
+            icon: "error",
+        });
+    </script>
+<?php endif; ?>
+
 <div class="page-heading">
     <div class="page-title">
         <div class="row">
@@ -21,7 +31,7 @@
         <div class="card">
             <div class="card-header">
                 <!-- <a href="?page=add_transaksi" class="btn btn-primary">Tambah Data Transaksi</a> -->
-                <a href="?page=print_transaksi" class="btn btn-success">Print</a>
+                <a href="function/transaksi/exportTransaksi.php" class="btn btn-success">Print</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -45,7 +55,7 @@
                             <?php
                             $no = 1;
 
-                            $sql = "SELECT * FROM transaksi JOIN user ON transaksi.user = user.username";
+                            $sql = "SELECT * FROM transaksi JOIN user ON transaksi.user = user.username ORDER BY tanggal DESC";
                             $query = mysqli_query($conn, $sql);
                             while ($data = mysqli_fetch_array($query)) :
                             ?>
