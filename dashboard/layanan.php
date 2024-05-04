@@ -1,3 +1,29 @@
+<?php if (isset($_GET['insert'])) : ?>
+    <script>
+        Swal.fire({
+            title: "Good job!",
+            text: "Data Pegawai Berhasil Di Tambah!",
+            icon: "success",
+        });
+    </script>
+<?php elseif (isset($_GET['update'])) : ?>
+    <script>
+        Swal.fire({
+            title: "Good job!",
+            text: "Data Pegawai Berhasil Di Update!",
+            icon: "success",
+        });
+    </script>
+<?php elseif (isset($_GET['delete'])) : ?>
+    <script>
+        Swal.fire({
+            title: "Good job!",
+            text: "Data Pegawai Berhasil Di Hapus!",
+            icon: "success",
+        });
+    </script>
+<?php endif; ?>
+
 <div class="page-heading">
     <div class="page-title">
         <div class="row">
@@ -19,10 +45,12 @@
     <!-- Basic Tables start -->
     <section class="section">
         <div class="card">
-            <div class="card-header">
-                <a href="?page=add_layanan" class="btn btn-primary">Tambah Data Layanan</a>
-                <a href="?page=print_layanan" class="btn btn-success">Print</a>
-            </div>
+            <?php if ($_SESSION['posisi'] == 1 || $_SESSION['posisi'] == 2) : ?>
+                <div class="card-header">
+                    <a href="?page=function/layanan/addLayanan" class="btn btn-primary">Tambah Data Layanan</a>
+                    <a href="?page=print_layanan" class="btn btn-success">Print</a>
+                </div>
+            <?php endif; ?>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table" id="table1">
@@ -47,12 +75,12 @@
 
                                 <tr>
                                     <td><?= $no++ ?></td>
-                                    <td><?= $data['layanan'] ?></td>
-                                    <td><?= $data['harga'] ?></td>
+                                    <td style="font-weight: bold;"><?= $data['layanan'] ?></td>
+                                    <td>Rp <?= number_format($data['harga'], 0, ',', '.') ?></td>
                                     <td><?= $data['ket'] ?></td>
                                     <td>
-                                        <a href=""><i class="fa-solid fa-pen text-warning p-2"></i></a>
-                                        <a href=""><i class="fa-solid fa-trash text-danger p-2"></i></a>
+                                        <a href="?page=function/layanan/editLayanan&id=<?= $data['layananID'] ?>"><i class="fa-solid fa-pen text-warning p-2"></i></a>
+                                        <a href="function/layanan/deleteLayanan.php?id=<?= $data['layananID'] ?>"><i class="fa-solid fa-trash text-danger p-2" onclick="return confirm('Are you sure?')"></i></a>
                                     </td>
                                 </tr>
 
@@ -65,5 +93,4 @@
 
     </section>
     <!-- Basic Tables end -->
-
 </div>

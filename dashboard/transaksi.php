@@ -20,7 +20,7 @@
     <section class="section">
         <div class="card">
             <div class="card-header">
-                <a href="?page=add_transaksi" class="btn btn-primary">Tambah Data Transaksi</a>
+                <!-- <a href="?page=add_transaksi" class="btn btn-primary">Tambah Data Transaksi</a> -->
                 <a href="?page=print_transaksi" class="btn btn-success">Print</a>
             </div>
             <div class="card-body">
@@ -61,8 +61,8 @@
                                     <td><?= $data['catatan'] ?></td>
                                     <td><?= $data['status'] ?></td>
                                     <td>
-                                        <a href=""><i class="fa-solid fa-pen text-warning p-2"></i></a>
-                                        <a href=""><i class="fa-solid fa-trash text-danger p-2"></i></a>
+                                        <!-- <a href=""><i class="fa-solid fa-pen text-warning p-2"></i></a> -->
+                                        <a href="funtion/transaksi/deleteTransaksi.php?id=<?= $data['id'] ?>"><i class="fa-solid fa-trash text-danger p-2"></i></a>
                                     </td>
                                 </tr>
 

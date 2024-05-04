@@ -19,9 +19,11 @@
     <!-- Basic Tables start -->
     <section class="section">
         <div class="card">
-            <div class="card-header">
-                <a href="?page=print_review" class="btn btn-success">Print</a>
-            </div>
+            <?php if ($_SESSION['posisi'] == 1 || $_SESSION['posisi'] == 2) : ?>
+                <div class="card-header">
+                    <a href="?page=print_review" class="btn btn-success">Print</a>
+                </div>
+            <?php endif; ?>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table" id="table1">
