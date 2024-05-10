@@ -28,8 +28,7 @@ if (isset($_GET['berhasil'])) {
     <div class="max-w-screen-xl px-4 py-24 mx-auto text-center lg:py-56">
         <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl"><span class="text-cyan-500">OK Laundry</span>, Shuttle Every Day</h1>
         <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
-            <span class="underline">OK Laundry</span> adalah sebuah platform yang menyediakan jasa laundry. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Iusto, natus!
+            <span class="underline">OK Laundry</span> adalah sebuah platform yang menyediakan jasa laundry. Kami menyediakan berbagai layanan laundry yang dapat anda pilih.
         </p>
         <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
             <a href="#layanan" class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white rounded-lg bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:ring-sky-300 dark:focus:ring-sky-900">
@@ -58,7 +57,7 @@ if (isset($_GET['berhasil'])) {
         <div class="flex flex-col justify-between w-full p-3 border border-gray-200 rounded-lg shadow md:w-1/4 bg-slate-200 dark:bg-gray-800 dark:border-gray-700">
             <div>
                 <button data-modal-target="layanan-cuci-basah" data-modal-toggle="layanan-cuci-basah">
-                    <img class="rounded-t-lg" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
+                    <img class="rounded-t-lg lg:h-72" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
                 </button>
 
                 <div class="px-5 py-5">
@@ -95,7 +94,7 @@ if (isset($_GET['berhasil'])) {
         <div class="flex flex-col justify-between w-full p-3 border border-gray-200 rounded-lg shadow md:w-1/4 bg-slate-200 dark:bg-gray-800 dark:border-gray-700">
             <div>
                 <button data-modal-target="layanan-cuci-kering" data-modal-toggle="layanan-cuci-kering">
-                    <img class="rounded-t-lg" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
+                    <img class="object-cover rounded-t-lg lg:h-72" src="asset/img/cuci.jpg" alt="product image" loading="lazy" />
                 </button>
 
                 <div class="px-5 py-5">
@@ -133,7 +132,7 @@ if (isset($_GET['berhasil'])) {
         <div class="flex flex-col justify-between w-full p-3 border border-gray-200 rounded-lg shadow md:w-1/4 bg-slate-200 dark:bg-gray-800 dark:border-gray-700">
             <div>
                 <button data-modal-target="layanan-kombo" data-modal-toggle="layanan-kombo">
-                    <img class="rounded-t-lg" src="asset/img/bersih.jpg" alt="product image" loading="lazy" />
+                    <img class="object-cover rounded-t-lg lg:h-72" src="asset/img/setrika.jpg" alt="product image" loading="lazy" />
                 </button>
                 <div class="px-5 py-5">
                     <a href="#">
@@ -189,20 +188,20 @@ if (isset($_GET['berhasil'])) {
         </div>
         <div class="flex items-center justify-center py-5 md:py-3">
             <div class="w-1/3">
-                <i class="text-6xl fa-solid fa-cart-plus text-sky-500"></i>
+                <i class="text-6xl fa-solid fa-wallet text-sky-500"></i>
             </div>
             <div class="w-1/2">
-                <h3 class="text-lg font-semibold md:text-xl">Pesan Laundry Anda</h3>
-                <p class="text-sm font-light text-justify text-slate-700">Pesan laundry dengan mudah melalui platform kami. Dijamin <span class="font-bold text-cyan-300">100%</span> aman.</p>
+                <h3 class="text-lg font-semibold md:text-xl">Lakukan Pembayaran</h3>
+                <p class="text-sm font-light text-justify text-slate-700">Pembayaran mudah dengan berbagai jenis metode pembayaran.</p>
             </div>
         </div>
         <div class="flex items-center justify-center py-5 md:py-3">
             <div class="w-1/3">
-                <i class="text-6xl fa-solid fa-cart-plus text-sky-500"></i>
+                <i class="text-6xl fa-solid fa-truck text-sky-500"></i>
             </div>
             <div class="w-1/2">
-                <h3 class="text-lg font-semibold md:text-xl">Pesan Laundry Anda</h3>
-                <p class="text-sm font-light text-justify text-slate-700">Pesan laundry dengan mudah melalui platform kami. Dijamin <span class="font-bold text-cyan-300">100%</span> aman.</p>
+                <h3 class="text-lg font-semibold md:text-xl">Pesanan akan di proses dan dijemput</h3>
+                <p class="text-sm font-light text-justify text-slate-700">Pesanan akan di proses oleh kami dan akan kami konfirmasi kepada anda. Proses paling lama hanya <span class="font-bold text-cyan-300">1 jam</span> saja.</p>
             </div>
         </div>
     </div>
@@ -336,13 +335,13 @@ if (isset($_GET['berhasil'])) {
     <h1 class="text-xl font-extrabold md:text-4xl">Benefit Laundry di <span class="text-sky-500">OK Laundry</span></h1>
     <p class="text-sm font-light text-slate-700 md:font-normal">Kamu ingin tau apa aja yang bakal kamu dapatkan dari
         laundry kami?</p>
-    <div class="flex flex-wrap items-center justify-center py-10 md:gap-3">
+    <div class="flex flex-wrap items-start justify-center py-10 md:gap-3">
         <!-- first -->
         <div class="w-2/3 my-3 border-2 rounded-md shadow-md bg-slate-100 border-slate-300 md:w-1/4">
             <img src="asset/img/bersih.jpg" alt="1" class="object-cover" loading="lazy" />
             <div class="p-3 md:px-10">
-                <h3 class="py-3 text-lg font-bold leading-5 md:text-xl">Pengalaman Layanan <span class="text-sky-800">Terbaik</span></h3>
-                <p class="text-sm font-extralight text-slate-700">Pengalaman terbaik akan kami berikan kepada anda dan pakaian anda. Lorem ipsum dolor sit amet consectetur.</p>
+                <h3 class="py-3 text-lg font-bold leading-5 md:text-xl">Kebersihan Terjamin untuk Setiap <span class="text-sky-800">Pakaian</span></h3>
+                <p class="text-sm font-extralight text-slate-700">Kami menjamin setiap pakaian anda akan kembali dengan keadaan bersih setiap bagiannya.</p>
             </div>
         </div>
 
@@ -350,8 +349,8 @@ if (isset($_GET['berhasil'])) {
         <div class="w-2/3 my-3 border-2 rounded-md shadow-md bg-slate-100 border-slate-300 md:w-1/4">
             <img src="asset/img/bersih.jpg" alt="1" class="object-cover" loading="lazy" />
             <div class="p-3 md:px-10">
-                <h3 class="py-3 text-lg font-bold leading-5 md:text-xl">Pengalaman Layanan <span class="text-sky-800">Terbaik</span></h3>
-                <p class="text-sm font-extralight text-slate-700">Pengalaman terbaik akan kami berikan kepada anda dan pakaian anda. Lorem ipsum dolor sit amet consectetur.</p>
+                <h3 class="py-3 text-lg font-bold leading-5 md:text-xl">Layanan Antar-Jemput <span class="text-sky-800">GRATIS</span> - Lebih Hemat Waktu!</h3>
+                <p class="text-sm font-extralight text-slate-700">Jemput pakaianmu di lokasi anda dengan layanan antar-jemput gratis.</p>
             </div>
         </div>
 
@@ -360,7 +359,7 @@ if (isset($_GET['berhasil'])) {
             <img src="asset/img/bersih.jpg" alt="1" class="object-cover" />
             <div class="p-3 md:px-10">
                 <h3 class="py-3 text-lg font-bold leading-5 md:text-xl">Pengalaman Layanan <span class="text-sky-800">Terbaik</span></h3>
-                <p class="text-sm font-extralight text-slate-700">Pengalaman terbaik akan kami berikan kepada anda dan pakaian anda. Lorem ipsum dolor sit amet consectetur.</p>
+                <p class="text-sm font-extralight text-slate-700">Nikmati pengalaman layanan terbaik dari setiap layanan kami.</p>
             </div>
         </div>
     </div>
@@ -418,9 +417,6 @@ if (isset($_GET['berhasil'])) {
     <a href="" class="text-blue-500 underline">&rarr; Google Form</a>
 </section>
 <!-- end feed back -->
-
-
-
 
 
 <!-- layanan modal -->
