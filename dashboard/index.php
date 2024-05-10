@@ -27,8 +27,9 @@ if (!isset($_SESSION['login_adm']) && !isset($_SESSION['user_adm'])) {
   <link rel="stylesheet" href="./assets/compiled/css/app-dark.css" />
   <link rel="stylesheet" href="./assets/compiled/css/iconly.css" />
   <!-- tailwind -->
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/22f19496c5.js" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -59,7 +60,7 @@ if (!isset($_SESSION['login_adm']) && !isset($_SESSION['user_adm'])) {
 
 
       <footer>
-        <div class="footer clearfix mb-0 text-muted">
+        <div class="clearfix mb-0 footer text-muted">
           <div class="float-start">
             <p>2023 &copy; Mazer</p>
           </div>
@@ -83,6 +84,9 @@ if (!isset($_SESSION['login_adm']) && !isset($_SESSION['user_adm'])) {
   <script src="assets/extensions/datatables.net/js/jquery.dataTables.min.js"></script>
   <script src="assets/extensions/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
   <script src="assets/static/js/pages/datatables.js"></script>
+
+  <!-- flowbite -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
 </body>
 

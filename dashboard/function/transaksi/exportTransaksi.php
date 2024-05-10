@@ -83,9 +83,18 @@ $html = '
             </thead>
             <tbody>';
 
+$tanggalAwal = $_POST['TanggalAwal'];
+$tanggalAkhir = $_POST['TanggalAkhir'];
+
 $no = 1;
-$query = "SELECT * FROM transaksi JOIN user ON transaksi.user = user.username WHERE status = 'Selesai' ORDER BY tanggal DESC ";
+$query = "SELECT * 
+FROM transaksi 
+JOIN user ON transaksi.user = user.username 
+WHERE status = 'Selesai'
+AND DATE(tanggal) BETWEEN '$tanggalAwal' AND '$tanggalAkhir' 
+ORDER BY tanggal DESC";
 $result = $conn->query($query);
+
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {

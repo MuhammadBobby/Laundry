@@ -24,9 +24,7 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <!-- tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- mycss -->
@@ -39,8 +37,7 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- midtrans payment -->
-    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
-        data-client-key="SB-Mid-client-swwccgD0Jfc-pvk-"></script>
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-swwccgD0Jfc-pvk-"></script>
 
     <!-- ajax jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -48,8 +45,8 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
 
 <body class="font-[Poppins]">
     <?php
-    if (isset($_GET['berhasil'])):
-        ?>
+    if (isset($_GET['berhasil'])) :
+    ?>
         <script>
             Swal.fire({
                 title: "Berhasil Menghapus Item!",
@@ -63,31 +60,28 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
 
 
     <section class="py-32 bg-gradient-to-r from-indigo-500 via-teal-500 to-blue-500">
-        <div class="container mx-auto px-8 lg:px-32 bg-transparent">
-            <h1 class="text-3xl font-bold text-white mb-8">Keranjang</h1>
-            <div class="shadow-xl rounded-md bg-white">
+        <div class="container px-8 mx-auto bg-transparent lg:px-32">
+            <h1 class="mb-8 text-3xl font-bold text-white">Keranjang</h1>
+            <div class="bg-white rounded-md shadow-xl">
 
                 <!-- item -->
                 <?php
 
-                foreach ($result as $row): ?>
-                    <img src="asset/img/keranjang.png" class="rounded-sm block lg:hidden w-20 lg:h-24 mx-10 shadow-xl"
-                        alt="">
-                    <div class="flex justify-between p-5 px-10 items-center">
+                foreach ($result as $row) : ?>
+                    <img src="asset/img/keranjang.png" class="block w-20 mx-10 rounded-sm shadow-xl lg:hidden lg:h-24" alt="">
+                    <div class="flex items-center justify-between p-5 px-10">
                         <div id="main" class="flex items-center gap-3">
-                            <img src="asset/img/keranjang.png" class="rounded-sm hidden lg:block lg:w-auto lg:h-24" alt="">
+                            <img src="asset/img/keranjang.png" class="hidden rounded-sm lg:block lg:w-auto lg:h-24" alt="">
                             <div>
-                                <h3 class="text-md font-semibold lg:text-xl lg:font-bold"><?= $row["name"] ?></h3>
+                                <h3 class="font-semibold text-md lg:text-xl lg:font-bold"><?= $row["name"] ?></h3>
                                 <p class="text-xs font-light lg:text-base">Rp
                                     <?= number_format($row['price'], 0, ',', '.'); ?> x <?= $row["quantity"] ?> kg</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-5">
-                            <p class="text-md font-medium lg:text-xl">Rp <?= number_format($row['total'], 0, ',', '.'); ?>
+                            <p class="font-medium text-md lg:text-xl">Rp <?= number_format($row['total'], 0, ',', '.'); ?>
                             </p>
-                            <a href="function/remove-item.php?id=<?= $row['idTransaksi'] ?>"
-                                class="text-red-500 text-sm lg:text-xl"
-                                onclick="return confirm('Apakah kamu yakin ingin menghapus item ini?')">
+                            <a href="function/remove-item.php?id=<?= $row['idTransaksi'] ?>" class="text-sm text-red-500 lg:text-xl" onclick="return confirm('Apakah kamu yakin ingin menghapus item ini?')">
                                 <i class="fa-solid fa-trash"></i>
                             </a>
                         </div>
@@ -100,15 +94,15 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
                 $totalHarga = "SELECT SUM(total) as totalHarga FROM transaksi WHERE user = '$_SESSION[user]' && status = 'pending'";
                 $total = query($totalHarga);
                 ?>
-                <div class="flex justify-between p-5 px-10 items-center">
+                <div class="flex items-center justify-between p-5 px-10">
                     <p class="text-lg font-bold lg:text-xl">Total Harga</p>
                     <p class="text-xl font-bold lg:text-2xl">Rp
                         <?= number_format($total[0]["totalHarga"], 0, ',', '.'); ?></p>
                 </div>
 
 
-                <?php if ($result): ?>
-                    <form class="space-y-4 px-10 py-10 md:px-32  md:space-y-6" id="payment-form">
+                <?php if ($result) : ?>
+                    <form class="px-10 py-10 space-y-4 md:px-32 md:space-y-6" id="payment-form">
                         <h3 class="text-lg font-medium">Data Diri :</h3>
                         <p class="text-xs font-light md:text-sm">Silahkan lengkapi data diri untuk proses pemesanan</p>
 
@@ -124,43 +118,35 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <i class="fa-solid fa-person"></i>
                             </div>
-                            <input type="text" id="nama" name="nama"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
-                                value="<?= $row["nama"] ?>">
+                            <input type="text" id="nama" name="nama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" value="<?= $row["nama"] ?>">
                         </div>
 
                         <div class="relative">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <i class="fa-solid fa-house"></i>
                             </div>
-                            <input type="text" id="alamat" name="alamat"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
-                                value="<?= $row["alamat"] ?>">
+                            <input type="text" id="alamat" name="alamat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" value="<?= $row["alamat"] ?>">
                         </div>
 
                         <div class="relative">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                 <i class="fa-solid fa-address-book"></i>
                             </div>
-                            <input type="text" id="kontak" name="kontak"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
-                                value="<?= $row["kontak"] ?>">
+                            <input type="text" id="kontak" name="kontak" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5" value="<?= $row["kontak"] ?>">
                         </div>
 
-                        <button type="button" id="pay-button"
-                            class="w-fit text-white bg-sky-600 hover:bg-sky-700 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Checkout</button>
-                        <p class="text-xs font-light text-red-600 -mt-3">*Jangan keluar dari pop up sebelum menyelesaikan
+                        <button type="button" id="pay-button" class="w-fit text-white bg-sky-600 hover:bg-sky-700 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Checkout</button>
+                        <p class="-mt-3 text-xs font-light text-red-600">*Jangan keluar dari pop up sebelum menyelesaikan
                             pembayaran!</p>
 
                         <a href="index.php#layanan" class="block text-lg font-medium text-sky-600 hover:underline">&lt;&lt;
                             Lanjutkan Pemesanan layanan</a>
                     </form>
 
-                <?php else: ?>
+                <?php else : ?>
                     <div class="py-20">
-                        <h1 class="text2xl font-bold text-red-500 text-center md:text-3xl">Keranjang Kosong</h1>
-                        <a href="index.php#layanan"
-                            class="block text-center mt-5 text-sm font-medium text-sky-600 hover:underline">&lt;&lt;
+                        <h1 class="font-bold text-center text-red-500 text2xl md:text-3xl">Keranjang Kosong</h1>
+                        <a href="index.php#layanan" class="block mt-5 text-sm font-medium text-center text-sky-600 hover:underline">&lt;&lt;
                             Lanjutkan Pemesanan layanan</a>
                     </div>
                 <?php endif; ?>
@@ -170,9 +156,7 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
     </section>
 
     <!-- Modal toggle -->
-    <button data-modal-target="default-modal" data-modal-toggle="default-modal"
-        class="fixed text-xl bottom-10 right-10 text-cyan-500 bg-white hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full px-5 py-4 text-center md:text-3xl"
-        title="Riwayat Pemesanan" type="button">
+    <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="fixed px-5 py-4 text-xl font-medium text-center bg-white rounded-full bottom-10 right-10 text-cyan-500 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 md:text-3xl" title="Riwayat Pemesanan" type="button">
         <i class="fa-solid fa-clock-rotate-left"></i>
     </button>
 
@@ -186,30 +170,25 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
     <!-- modal -->
 
     <!-- Main modal -->
-    <div id="default-modal" tabindex="-1" aria-hidden="true"
-        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-        <div class="relative p-4 w-full max-w-2xl max-h-full">
+    <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative w-full max-w-2xl max-h-full p-4">
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                 <!-- Modal header -->
-                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <div class="flex items-center justify-between p-4 border-b rounded-t md:p-5 dark:border-gray-600">
                     <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                         Riwayat Pemesanan
                     </h3>
-                    <button type="button"
-                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                        data-modal-hide="default-modal">
-                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                    <button type="button" class="inline-flex items-center justify-center w-8 h-8 text-sm text-gray-400 bg-transparent rounded-lg hover:bg-gray-200 hover:text-gray-900 ms-auto dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
                         </svg>
                         <span class="sr-only">Close modal</span>
                     </button>
                 </div>
 
-                <div class="relative sm:rounded-lg overflow-x-hidden">
-                    <table class="w-full text-sm text-left rtl:text-right text-gray-500  rounded-md">
+                <div class="relative overflow-x-hidden sm:rounded-lg">
+                    <table class="w-full text-sm text-left text-gray-500 rounded-md rtl:text-right">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                             <tr>
                                 <th scope="col" class="px-6 py-3">
@@ -232,14 +211,14 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
                         <tbody>
                             <?php
                             $riwayat = query("SELECT * FROM transaksi JOIN user ON transaksi.user = user.username WHERE user = '$_SESSION[user]' && status = 'selesai' ORDER BY tanggal DESC  LIMIT 5");
-                            foreach ($riwayat as $data):
+                            foreach ($riwayat as $data) :
 
                                 $tanggal = $data['tanggal'];
                                 $date = new DateTime($tanggal);
                                 $tanggalFormat = $date->format('d F Y H:i');
-                                ?>
+                            ?>
 
-                                <tr class="bg-white border-b  hover:bg-gray-50">
+                                <tr class="bg-white border-b hover:bg-gray-50">
                                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
                                         <?= $data['name'] ?>
                                     </th>
@@ -252,23 +231,21 @@ $result = query("SELECT *, transaksi.id as idTransaksi FROM transaksi JOIN user 
                                     <td class="px-6 py-4">
                                         Rp <?= number_format($data['price'], 0, ',', '.') ?>
                                     </td>
-                                    <td class="px-6 py-4 text-right font-bold">
+                                    <td class="px-6 py-4 font-bold text-right">
                                         Rp <?= number_format($data['total'], 0, ',', '.') ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <div class="bg-white p-5">
+                    <div class="p-5 bg-white">
                         <h1 class="text-xl font-semibold text-gray-900">Cetak Invoice</h1>
                         <form action="function/invoice.php" method="POST">
-                            <label for="tanggal" class="inline-block mb-2 text-sm font-medium text-gray-900 mt-3">Pilih
+                            <label for="tanggal" class="inline-block mt-3 mb-2 text-sm font-medium text-gray-900">Pilih
                                 Tanggal</label>
-                            <input type="date" name="tanggal" id="tanggal"
-                                class="block bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5">
+                            <input type="date" name="tanggal" id="tanggal" class="block bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5">
                             <input type="hidden" name="user" id="user" value="<?= $_SESSION["user"] ?>">
-                            <button type="submit"
-                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-3">Cetak</button>
+                            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-3">Cetak</button>
                         </form>
                     </div>
                 </div>

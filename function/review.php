@@ -3,7 +3,7 @@ require 'connect.php';
 session_start();
 date_default_timezone_set('Asia/Jakarta');
 
-if (!isset($_SESSION['login'])) {
+if (!isset($_SESSION['login']) && !isset($_SESSION['user'])) {
     header('Location: ../auth/login.php');
 }
 
@@ -18,5 +18,5 @@ if (mysqli_query($conn, $sql)) {
     header('Location: ../index.php?review=true#reviews');
     exit;
 } else {
-    echo json_encode(array('success' => false));
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
